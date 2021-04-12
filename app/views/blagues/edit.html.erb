@@ -1,0 +1,35 @@
+<h2>Modifier la blague</h2>
+
+<%= form_with model: @blague, local: true do |form| %>
+
+    <% if @blague.errors.any? %>
+        <h2>Une erreur est survenue</h2>
+        <ul>
+            <% @blague.errors.full_messages.each do |msg| %>
+                <li><%= msg %> </li>
+            <%end%>
+        
+        </ul>
+    <%end%>
+
+    <p>
+        <%= form.label :nom %>
+        <%= form.text_field :nom%>
+    
+    </p>
+    <p>
+        <%= form.label :contenu %>
+        <%= form.text_area :contenu%>
+    
+    </p>
+    <p>
+        <%= form.label :auteur %>
+        <%= form.text_field :auteur%>
+    
+    </p>
+
+    <p>
+        <%= form.submit "Modifier la blague" %>
+    </p>
+
+<%end%>

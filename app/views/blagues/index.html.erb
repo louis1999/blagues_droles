@@ -1,0 +1,16 @@
+<h2>Toutes les blagues</h2>
+<br>
+<div><%= link_to "Publier une nouvelle blague", new_blague_path() %></div>
+<br>
+<% @blagues.each do |blague| %>
+
+    <div>Nom : <%= blague.nom%></div>
+    <div>Contenu : <%= blague.contenu%></div>
+    <div>Publié par : <%= blague.auteur%></div>
+    <div><%= link_to "Voir la blague", blague_path(blague) %></div>
+    <div><%= link_to "Modifier la blague", edit_blague_path(blague) %></div>
+    <div><%= link_to "Supprimer la blague", blague_path(blague), method: :delete %></div>
+
+    <hr>
+
+<% end %>
